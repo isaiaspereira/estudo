@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Livraria.MVC.ViewModels.EditoraViewModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listando Editoras Cadastradas até o momento</h2>
+
+
+@*<p class="alert-success">
+
+    @if (TempData != null)
+    {
+        @TempData["mensagem"]
+    }
+</p>*@
+
+@using (Html.BeginForm("Index","Editora",FormMethod.Get))
+{
+    @Html.TextBox("Pesquisa")
+    <input type="submit" value="Pesquisar" />
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@Html.Partial("_BuscaPorNome",Model)

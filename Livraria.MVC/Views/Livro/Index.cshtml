@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Livraria.MVC.ViewModels.LivroViewModels>
+
+@{
+    ViewBag.Title = "Lisvros Cadastrados";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index","Livro",FormMethod.Get))
+{
+     @Html.TextBox("Pesquisa")
+    <input type="submit" value="Pesquisar" class="glyphicon-credit-card" />
+}
+<p>
+    @Html.ActionLink("Novo Livro", "Create")
+</p>
+@Html.Partial("_BucaPorNome", Model)

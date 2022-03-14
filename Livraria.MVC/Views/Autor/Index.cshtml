@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Livraria.MVC.ViewModels.AutorViewModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index","Autor",FormMethod.Get))
+{
+    @Html.TextBox("Pesquisa")
+    <input type="submit" value="Pesquisar" />
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@Html.Partial("_BuscaPorNome",Model)
