@@ -21,11 +21,21 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Editora", "index", "Editora")</li>
-                    <li>@Html.ActionLink("Genero", "index", "Genero")</li>
-                    <li>@Html.ActionLink("Livro", "index", "Livro")</li>
-                    <li>@Html.ActionLink("Autor", "index", "Autor")</li>
-                    
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Editora", "index", "Editora")</li>
+                        <li>@Html.ActionLink("Genero", "index", "Genero")</li>
+                        <li>@Html.ActionLink("Livro", "index", "Livro")</li>
+                        <li>@Html.ActionLink("Autor", "index", "Autor")</li>
+                        <li>@Html.ActionLink("Sair", "Logoff", "Account")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Entrar", "Login", "Account")</li>
+                        <li>@Html.ActionLink("Registrar", "CreatLogin", "Account")</li>
+                    }
+
+
                 </ul>
             </div>
         </div>

@@ -17,23 +17,16 @@ namespace Livraria.MVC.AutoMapper
 
             Mapper.Initialize(X =>
             {
-                //IDA
-                //Modo EASY
-                //X.CreateMap(typeof(IAppServiceBase))
-                X.CreateMap<Livro, LivroViewModels>();
-                X.CreateMap<Autor, AutorViewModels>();
-                X.CreateMap<Genero, GeneroViewModels>();
-                X.CreateMap<Editora, EditoraViewModels>();
-                #region ABSOLETO
-                ////VOLTA
-                X.CreateMap<LivroViewModels, Livro>();
-                X.CreateMap<AutorViewModels, Autor>();
-                X.CreateMap<GeneroViewModels, Genero>();
-                X.CreateMap<EditoraViewModels, Editora>();
 
-                //    ////X.AddProfile<>();Domain
-                //    ////X.AddProfile<>();ViewModels
-                    #endregion
+                X.CreateMap<Livro, LivroViewModels>().ReverseMap();
+                X.CreateMap<Autor, AutorViewModels>().ReverseMap();
+                X.CreateMap<Genero, GeneroViewModels>().ReverseMap();
+                X.CreateMap<Editora, EditoraViewModels>().ReverseMap();
+                X.CreateMap<AcessoCliente, AcessoClienteViewModels>().ReverseMap();
+                X.CreateMap<AcessoUsuario, AcessoUsuarioViewModels>().ReverseMap();
+                X.CreateMap<Usuario, UsuarioViewModels>().ReverseMap();
+                X.CreateMap<Cliente, ClienteViewModels>().ReverseMap();
+
             });
         }
 

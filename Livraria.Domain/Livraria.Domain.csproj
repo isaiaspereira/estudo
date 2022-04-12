@@ -40,26 +40,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entitis\Acesso.cs" />
+    <Compile Include="Entitis\AcessoCliente.cs" />
+    <Compile Include="Entitis\AcessoUsuario.cs" />
     <Compile Include="Entitis\Autor.cs" />
+    <Compile Include="Entitis\Cliente.cs" />
+    <Compile Include="Entitis\Contato.cs" />
     <Compile Include="Entitis\Editora.cs" />
+    <Compile Include="Entitis\Endereco.cs" />
     <Compile Include="Entitis\Genero.cs" />
     <Compile Include="Entitis\Livro.cs" />
+    <Compile Include="Entitis\Operadora.cs" />
+    <Compile Include="Entitis\Usuario.cs" />
+    <Compile Include="Interfece\Repositorio\IAcessoClienteRepository .cs" />
+    <Compile Include="Interfece\Repositorio\IAcessoUsuarioRepository.cs" />
     <Compile Include="Interfece\Repositorio\IAutorRepository.cs" />
+    <Compile Include="Interfece\Repositorio\IClienteRepository.cs" />
+    <Compile Include="Interfece\Repositorio\IContatoRepository.cs" />
     <Compile Include="Interfece\Repositorio\IEditoraRepository.cs" />
+    <Compile Include="Interfece\Repositorio\IEnderecoRepository.cs" />
     <Compile Include="Interfece\Repositorio\IGeneroRepository.cs" />
     <Compile Include="Interfece\Repositorio\ILivroRepository.cs" />
+    <Compile Include="Interfece\Repositorio\IOperadoraRepository.cs" />
     <Compile Include="Interfece\Repositorio\IRepositorybase.cs" />
+    <Compile Include="Interfece\Repositorio\IUsuarioRepository.cs" />
+    <Compile Include="Interfece\Servico\IAcessoClienteService .cs" />
+    <Compile Include="Interfece\Servico\IAcessoUsuarioService.cs" />
     <Compile Include="Interfece\Servico\IAutorService.cs" />
+    <Compile Include="Interfece\Servico\IClienteService.cs" />
+    <Compile Include="Interfece\Servico\IContatoService.cs" />
     <Compile Include="Interfece\Servico\IEditoraService.cs" />
+    <Compile Include="Interfece\Servico\IEnderecoService.cs" />
     <Compile Include="Interfece\Servico\IGeneroService.cs" />
     <Compile Include="Interfece\Servico\ILivroService.cs" />
+    <Compile Include="Interfece\Servico\IOperadoraService.cs" />
     <Compile Include="Interfece\Servico\IServiceBase.cs" />
+    <Compile Include="Interfece\Servico\IUsuarioService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servico\AcessoClienteService.cs" />
+    <Compile Include="Servico\AcessoUsuarioService.cs" />
     <Compile Include="Servico\AutorService.cs" />
+    <Compile Include="Servico\ClienteService.cs" />
+    <Compile Include="Servico\ContatoService.cs" />
     <Compile Include="Servico\EditoraService.cs" />
+    <Compile Include="Servico\EnderecoService.cs" />
     <Compile Include="Servico\GeneroService.cs" />
     <Compile Include="Servico\LivroService.cs" />
+    <Compile Include="Servico\OperadoraService.cs" />
     <Compile Include="Servico\ServiceBase.cs" />
+    <Compile Include="Servico\UsuarioService.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

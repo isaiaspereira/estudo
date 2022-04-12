@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Livraria.Application.Interface
 {
-    public interface IAppSeriveBase<TEntity> where TEntity : class
+    public interface IAppServiceBase<TEntity> where TEntity : class
     {
         void Add(TEntity obj);
 

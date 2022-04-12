@@ -13,6 +13,7 @@ namespace Livraria.Domain.Interfece
 
         void Remove(TEntity obj);
 
+
         void Dispose();
     }
 }

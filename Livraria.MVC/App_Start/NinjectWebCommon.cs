@@ -1,4 +1,4 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Livraria.MVC.App_Start.NinjectWebCommon), "Start")]
+ [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Livraria.MVC.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Livraria.MVC.App_Start.NinjectWebCommon), "Stop")]
 
 namespace Livraria.MVC.App_Start
@@ -18,6 +18,10 @@ namespace Livraria.MVC.App_Start
     using Infra.Repositories;
     using Livraria.Domain.Entitis;
     using Livraria.MVC.ViewModels;
+    using Livraria.Application.Interface.InterfaceSecurity;
+    using Livraria.Application.Services.Login;
+    using Livraria.Application.Services;
+    using Livraria.Domain.Interfece.Repositorio;
 
     public static class NinjectWebCommon
     {
@@ -69,27 +73,43 @@ namespace Livraria.MVC.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind(typeof(IAppSeriveBase<>)).To(typeof(AppServiceBase<>));
+            kernel.Bind(typeof(IAppServiceBase<>)).To(typeof(AppServiceBase<>));
             kernel.Bind<IAutorAppService>().To<AutorAppService>();
             kernel.Bind<ILivroAppService>().To<LivroAppService>();
             kernel.Bind<IGeneroAppService>().To<GeneroAppService>();
             kernel.Bind<IEditoraAppService>().To<EditoraAppService>();
+            kernel.Bind<IAcessoClienteAppService>().To<AcessoClienteAppService>();
+            kernel.Bind<IAcessoUsuarioAppService>().To<AcessoUsuarioAppService>();
+            kernel.Bind<IAutenticateService>().To<AutenticateService>();
+            
 
             kernel.Bind(typeof(IServicebase<>)).To(typeof(ServiceBase<>));
             kernel.Bind<IAutorService>().To<AutorService>();
             kernel.Bind<ILivroService>().To<LivroService>();
             kernel.Bind<IGeneroService>().To<GeneroService>();
             kernel.Bind<IEditoraService>().To<EditoraService>();
+            kernel.Bind<IAcessoClienteService>().To<AcessoClienteService>();
+            kernel.Bind<IAcessoUsuarioService>().To<AcessoUsuarioService>();
+            kernel.Bind<IClienteService>().To<ClienteService>();
 
             kernel.Bind(typeof(IRepositorybase<>)).To(typeof(RepositoryBase<>));
             kernel.Bind<IAutorRepository>().To<AutorRepository>();
             kernel.Bind<ILivroRepository>().To<LivroRepository>();
             kernel.Bind<IGeneroRepository>().To<GeneroRepository>();
             kernel.Bind<IEditoraRepository>().To<EditoraRepository>();
+            kernel.Bind<IAcessoClienteRepository>().To<AcessoClienteRepository>();
+            kernel.Bind<IAcessoUsuarioRepository>().To<AcessoUsuarioRepository>();
+            kernel.Bind<IClienteRepository>().To<ClienteRepository>();
+
+            kernel.Bind<ISecurity>().To<Security>();
             kernel.Bind<Autor, AutorViewModels>();
             kernel.Bind<Livro, LivroViewModels>();
             kernel.Bind<Genero, GeneroViewModels>();
             kernel.Bind<Editora, EditoraViewModels>();
+            kernel.Bind<AcessoCliente, AcessoClienteViewModels>();
+            kernel.Bind<AcessoUsuario, AcessoUsuarioViewModels>();
+            kernel.Bind<Cliente, ClienteViewModels>();
+            kernel.Bind<Usuario, UsuarioViewModels>();
         }
     }
 }
