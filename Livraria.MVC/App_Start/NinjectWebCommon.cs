@@ -73,7 +73,7 @@ namespace Livraria.MVC.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind(typeof(IAppServiceBase<>)).To(typeof(AppServiceBase<>));
+            kernel.Bind(typeof(IAppSeriveBase<>)).To(typeof(AppServiceBase<>));
             kernel.Bind<IAutorAppService>().To<AutorAppService>();
             kernel.Bind<ILivroAppService>().To<LivroAppService>();
             kernel.Bind<IGeneroAppService>().To<GeneroAppService>();

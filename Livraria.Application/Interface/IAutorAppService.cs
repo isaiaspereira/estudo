@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Livraria.Application.Interface
 {
-    public interface IAutorAppService : IAppServiceBase<Autor>
+    public interface IAutorAppService : IAppSeriveBase<Autor>
     {
         IEnumerable<Autor> BuscaPorNome(string nome);
     }

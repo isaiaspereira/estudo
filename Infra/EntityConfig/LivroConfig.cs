@@ -10,7 +10,6 @@ namespace Infra.EntityConfig
         {
             HasKey(k => k.LivroId);
             Property(p => p.LivroId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(c => c.Codigo).HasMaxLength(11).IsRequired();
 
             Property(p => p.Nome).HasMaxLength(100).IsRequired();
             Property(p => p.Titulo).HasMaxLength(60).IsRequired();

@@ -11,6 +11,7 @@ namespace Livraria.Application.Interface.InterfaceSecurity
     {
         void CreatCliente(AcessoCliente acessoCliente);
         void CreatUser(AcessoUsuario acessoUsuario);
-        object LoginUser(string email,string senha);
+        object LoginUser(string email,string senha,bool lembrarMe);
+        bool Logoff(string emailForLogoff);
     }
 }

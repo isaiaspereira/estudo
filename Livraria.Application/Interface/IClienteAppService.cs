@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Livraria.Application.Interface
 {
-   public interface IClienteAppService:IAppServiceBase<Cliente>
+   public interface IClienteAppService: IAppSeriveBase<Cliente>
     {
     }
 }

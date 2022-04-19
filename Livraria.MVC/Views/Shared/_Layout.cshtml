@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
@@ -20,23 +20,31 @@
                 @Html.ActionLink("Livraria LTDA", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    @if (Request.IsAuthenticated)
-                    {
+                @if (Request.IsAuthenticated)
+                {
+                    <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("Editora", "index", "Editora")</li>
                         <li>@Html.ActionLink("Genero", "index", "Genero")</li>
                         <li>@Html.ActionLink("Livro", "index", "Livro")</li>
                         <li>@Html.ActionLink("Autor", "index", "Autor")</li>
+                        
+                    </ul>
+
+                    <ul class="nav  navbar-right navbar-nav  ">
+
+                        <li>@Html.ActionLink(User.Identity.Name, "#", "#")</li>
                         <li>@Html.ActionLink("Sair", "Logoff", "Account")</li>
-                    }
-                    else
-                    {
-                        <li>@Html.ActionLink("Entrar", "Login", "Account")</li>
-                        <li>@Html.ActionLink("Registrar", "CreatLogin", "Account")</li>
-                    }
 
-
-                </ul>
+                    </ul>
+                }
+                else
+                {
+                    <ul class="nav navbar-nav ">
+                        <li> @Html.ActionLink("Entrar", "Login", "Account") </li>
+                    </ul>
+                }
+            </div>
+            <div class="navbar-collapse right">
             </div>
         </div>
     </div>

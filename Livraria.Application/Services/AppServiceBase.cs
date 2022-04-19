@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Livraria.Application
 {
-    public class AppServiceBase<TEntity> : IDisposable, IAppServiceBase<TEntity> where TEntity : class
+    public class AppServiceBase<TEntity> : IDisposable, IAppSeriveBase<TEntity> where TEntity : class
     {
         private readonly IServicebase<TEntity> _Servicebase;
         public AppServiceBase(IServicebase<TEntity> servicebase)

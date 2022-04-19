@@ -14,22 +14,20 @@ namespace Livraria.MVC.ViewModels
         [Key]
         public int LivroId { get; set; }
 
-        [DisplayName("Código de Barra")]
-        [Required(ErrorMessage = "Obrigatório informar o Código de Barra")]
-        [MaxLength(100, ErrorMessage = "Máximo {0} Caracteres")]
-        [MinLength(2, ErrorMessage = "Minimo {0} Caracteres")]
+        [DisplayName("Código")]
+        [Required(ErrorMessage = "Campo Codigo é Obrigatório")]
         public string Codigo { get; set; }
 
         [DisplayName("Titulo")]
         [Required(ErrorMessage = "Informe o Titulo")]
-        [StringLength(100,ErrorMessage = "Máximo {0} Caracteres")]
-        [MinLength(2, ErrorMessage = "Minimo {0} Caracteres")]
+        [StringLength(100, ErrorMessage = "Máximo {1} Caracteres")]
+        [MinLength(5, ErrorMessage = "Minimo {1} Caracteres")]
         public string Titulo { get; set; }
 
         [DisplayName("Nome")]
         [Required(ErrorMessage = "Informe o Nome")]
-        [StringLength(150, ErrorMessage = "Máximo {0} Caracteres")]
-        [MinLength(2, ErrorMessage = "Minimo {0} Caracteres")]
+        [StringLength(150, ErrorMessage = "Máximo {1} Caracteres")]
+        [MinLength(5, ErrorMessage = "Minimo {0} Caracteres")]
         public string Nome { get; set; }
 
         [DisplayName("Valor")]
@@ -38,13 +36,13 @@ namespace Livraria.MVC.ViewModels
 
         [DisplayName("Descrição")]
         [Required(ErrorMessage = "Informe o Descrição")]
-        [StringLength(250, ErrorMessage = "Máximo {0} Caracteres")]
-        [MinLength(2, ErrorMessage = "Minimo {0} Caracteres")]
+        [StringLength(250, ErrorMessage = "Máximo {1} Caracteres")]
+        [MinLength(5, ErrorMessage = "Minimo {1} Caracteres")]
         public string Descricao { get; set; }
 
         [DisplayName("Resenha")]
-        [StringLength(500, ErrorMessage = "Máximo {0} Caracteres")]
-        [MinLength(2, ErrorMessage = "Minimo {0} Caracteres")]
+        [StringLength(500, ErrorMessage = "Máximo {1} Caracteres")]
+        [MinLength(5, ErrorMessage = "Minimo {1} Caracteres")]
         public string Sobre { get; set; }
 
         [ScaffoldColumn(false)]

@@ -90,6 +90,19 @@
     <Compile Include="Servico\ServiceBase.cs" />
     <Compile Include="Servico\UsuarioService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="bin\Debug\Livraria.Domain.dll" />
+    <Content Include="bin\Debug\Livraria.Domain.pdb" />
+    <Content Include="obj\Debug\Livraria.Domain.csproj.FileListAbsolute.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\Livraria.Domain.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Release\Livraria.Domain.csproj.CoreCompileInputs.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

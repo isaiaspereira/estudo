@@ -33,12 +33,6 @@
     <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net35\BCrypt.Net-Next.dll</HintPath>
     </Reference>
-    <Reference Include="Ninject, Version=3.3.3.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.3.3.3\lib\net45\Ninject.dll</HintPath>
-    </Reference>
-    <Reference Include="Ninject.Extensions.NamedScope, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.Extensions.NamedScope.3.3.0\lib\net45\Ninject.Extensions.NamedScope.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,25 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IAcessoClienteAppService.cs" />
+    <Compile Include="Interface\IAcessoUsuarioAppService.cs" />
+    <Compile Include="Interface\IAppSeriveBase.cs" />
+    <Compile Include="Interface\IAutorAppService.cs" />
+    <Compile Include="Interface\IClienteAppService.cs" />
+    <Compile Include="Interface\IEditoraAppService.cs" />
+    <Compile Include="Interface\IGeneroAppService.cs" />
+    <Compile Include="Interface\ILivroAppService.cs" />
     <Compile Include="Interface\InterfaceSecurity\IAutenticateService.cs" />
     <Compile Include="Interface\InterfaceSecurity\ISecurity.cs" />
+    <Compile Include="Interface\IUsuarioAppService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AcessoClienteAppService.cs" />
     <Compile Include="Services\AcessoUsuarioAppService.cs" />
     <Compile Include="Services\AppServiceBase.cs" />
     <Compile Include="Services\AutorAppService.cs" />
     <Compile Include="Services\EditoraAppService.cs" />
     <Compile Include="Services\GeneroAppService.cs" />
-    <Compile Include="Interface\IAcessoClienteAppService.cs" />
-    <Compile Include="Interface\IAcessoUsuarioAppService.cs" />
-    <Compile Include="Interface\IAppServiceBase.cs" />
-    <Compile Include="Interface\IAutorAppService.cs" />
-    <Compile Include="Interface\IClienteAppService.cs" />
-    <Compile Include="Interface\IEditoraAppService.cs" />
-    <Compile Include="Interface\IGeneroAppService.cs" />
-    <Compile Include="Interface\ILivroAppService.cs" />
-    <Compile Include="Interface\IUsuarioAppService.cs" />
     <Compile Include="Services\LivroAppService.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Login\AutenticateService.cs" />
     <Compile Include="Services\Login\Security.cs" />
   </ItemGroup>
@@ -78,7 +72,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\Livraria.Application.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\Livraria.Application.csprojAssemblyReference.cache" />
+    <None Include="obj\Release\Livraria.Application.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Release\Livraria.Application.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\Livraria.Application.csproj.FileListAbsolute.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,10 +19,13 @@ namespace Infra.Repositories
 
         public void Relacionar(Livro livro, int DestinoId)
         {
-            var Autor = Db.Autores.Find(DestinoId);
-            livro.Autores.Add(Autor);
-            Db.Livros.Add(livro);
-            Db.SaveChanges();
+
+                var Autor = Db.Autores.Find(DestinoId);
+                livro.Autores.Add(Autor);
+                Db.Livros.Add(livro);
+                Db.SaveChanges();
+            
+           
         }
     }
 }

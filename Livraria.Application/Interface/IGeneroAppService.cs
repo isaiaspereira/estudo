@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Livraria.Application.Interface
 {
-    public interface IGeneroAppService : IAppServiceBase<Genero>
+    public interface IGeneroAppService : IAppSeriveBase<Genero>
     {
 
     }

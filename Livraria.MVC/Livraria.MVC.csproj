@@ -299,8 +299,8 @@
     <Content Include="Views\Autor\_BuscaPorNome.cshtml" />
     <Content Include="Views\Editora\_BuscaPorNome.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\CreatLogin.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

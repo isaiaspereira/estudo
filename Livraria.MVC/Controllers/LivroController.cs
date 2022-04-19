@@ -7,20 +7,18 @@ using System.Collections.Generic;
 using System;
 using Livraria.Application.Interface;
 using AutoMapper;
-using Livraria.Application.Interface.InterfaceSecurity;
 
 namespace Livraria.MVC.Controllers
 {
+    [Authorize]
     public class LivroController : Controller
     {
         private readonly ILivroAppService _LivroApp;
         private readonly IAutorAppService _AutorApp;
         private readonly IGeneroAppService _GeneroApp;
         private readonly IEditoraAppService _EditoraApp;
-        
 
         public LivroController(ILivroAppService livroApp,
-            
             IAutorAppService autorApp,
             IGeneroAppService generoApp,
             IEditoraAppService editoraApp)
@@ -29,7 +27,6 @@ namespace Livraria.MVC.Controllers
             _GeneroApp = generoApp;
             _EditoraApp = editoraApp;
             _AutorApp = autorApp;
-            
 
         }
         // GET: Livro

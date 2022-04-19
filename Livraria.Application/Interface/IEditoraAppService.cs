@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Livraria.Application.Interface
 {
-    public interface IEditoraAppService : IAppServiceBase<Editora>
+    public interface IEditoraAppService : IAppSeriveBase<Editora>
     {
         IEnumerable<Editora> BuscaPorNome(string nome);
         void Relacionar(Editora editora, int DestinoId);

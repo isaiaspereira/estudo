@@ -67,7 +67,7 @@ namespace Livraria.MVC.Controllers
                 return View(loginView);
             }
 
-            if (_autenticate.LoginUser(loginView.Email, loginView.Senha) != null)
+            if (_autenticate.LoginUser(loginView.Email, loginView.Senha,loginView.LembrarMe) != null)
             {
                 FormsAuthentication.SetAuthCookie(loginView.Email, loginView.LembrarMe);
 
@@ -85,8 +85,11 @@ namespace Livraria.MVC.Controllers
         [HttpGet]
         public ActionResult Logoff()
         {
+            var emailForLogoff = User.Identity.Name;
+            _autenticate.Logoff(emailForLogoff);
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
+            
         }
 
     }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Livraria.Application.Interface
 {
-    public interface ILivroAppService : IAppServiceBase<Livro>
+    public interface ILivroAppService : IAppSeriveBase<Livro>
     {
         IEnumerable<Livro> BuscaPorNome(string nome);
         void Relacionar(Livro livro, int DestinoId);
