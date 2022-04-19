@@ -50,6 +50,16 @@ namespace Livraria.MVC.Controllers
             return View(acessoClienteViewModel);
             
         }
+
+
+        [HttpGet]
+        public ActionResult Login2(string retunUrl)
+        {
+           
+            return View();
+        }
+
+
         [AllowAnonymous]
         [HttpGet]
         public ActionResult Login(string retunUrl)
