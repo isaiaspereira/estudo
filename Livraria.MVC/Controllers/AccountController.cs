@@ -20,20 +20,18 @@ namespace Livraria.MVC.Controllers
         private readonly IAcessoClienteService _acessoClienteService;
         private readonly IAcessoUsuarioAppService _usuarioApp;
         private readonly IClienteService _clienteApp;
-        private readonly ISecurity _security;
-        public AccountController(IAcessoUsuarioAppService acessoUsuarioAppService,
-            ISecurity security, IAcessoClienteService acessoClienteService,
+
+        public AccountController(IAcessoUsuarioAppService acessoUsuarioAppService, IAcessoClienteService acessoClienteService,
             IAutenticateService autenticate, IClienteService clienteApp)
         {
             _acessoClienteService = acessoClienteService;
             _autenticate = autenticate;
             _usuarioApp = acessoUsuarioAppService;
-            _security = security;
             _clienteApp = clienteApp;
         }
         public ActionResult CreatLogin()
         {
-            ViewBag.AcessoClienteId = new SelectList(_clienteApp.GetAll(),"ClienteId","Nome");
+            ViewBag.AcessoClienteId = new SelectList(_clienteApp.GetAll(), "ClienteId", "Nome");
             return View();
         }
         [HttpPost]
@@ -43,46 +41,38 @@ namespace Livraria.MVC.Controllers
             {
                 var addAcessoCliente = Mapper.Map<AcessoClienteViewModels, AcessoCliente>(acessoClienteViewModel);
                 _autenticate.CreatCliente(addAcessoCliente);
-                return RedirectToAction("index","home");
+                return RedirectToAction("index", "home");
             }
             var listaCliente = Mapper.Map<IEnumerable<Cliente>, IEnumerable<ClienteViewModels>>(_clienteApp.GetAll());
             ViewBag.ClienteId = new SelectList(listaCliente, "ClienteId", "Nome", acessoClienteViewModel.AcessoClienteId);
             return View(acessoClienteViewModel);
-            
+
         }
-
-
-        [HttpGet]
-        public ActionResult Login2(string retunUrl)
-        {
-           
-            return View();
-        }
-
 
         [AllowAnonymous]
         [HttpGet]
-        public ActionResult Login(string retunUrl)
+        public ActionResult Login(string returnUrl)
         {
-            ViewBag.RetunUrl = retunUrl;
+
+            ViewBag.RetunUrl = returnUrl;
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
-        public ActionResult Login(LoginViewModels loginView, string retunUrl)
+        public ActionResult Login(LoginViewModels loginView, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
                 return View(loginView);
             }
 
-            if (_autenticate.LoginUser(loginView.Email, loginView.Senha,loginView.LembrarMe) != null)
+            if (_autenticate.LoginUser(loginView.Email, loginView.Senha, loginView.LembrarMe) != null)
             {
                 FormsAuthentication.SetAuthCookie(loginView.Email, loginView.LembrarMe);
 
-                if (Url.IsLocalUrl(retunUrl))
-                    return Redirect(retunUrl);
+                if (Url.IsLocalUrl(returnUrl))
+                    return Redirect(returnUrl);
 
                 return RedirectToAction("Index", "home");
             }
@@ -99,7 +89,7 @@ namespace Livraria.MVC.Controllers
             _autenticate.Logoff(emailForLogoff);
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
-            
+
         }
 
     }

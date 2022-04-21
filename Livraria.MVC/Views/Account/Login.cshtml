@@ -48,7 +48,10 @@
                             </div>
                         </div>
                         <div class="bottom-content">
-                            <form action="/Account/Login" method="post" role="form">
+                            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = Request.QueryString["ReturnUrl"] }, FormMethod.Post, new { role = "form" }))
+                            {
+                                
+                                @*<form action="/Account/Login" method="post" role="form"></form>*@
                                 @Html.AntiForgeryToken()
                                 <div>
                                     <input name="Email" type="text" class="input-form" id="Email" placeholder="Seu Usuario" required="required" />
@@ -58,14 +61,15 @@
                                     <p>@Html.CheckBoxFor(m => m.LembrarMe) <label for=" LembrarMe">Lembrar-me</label></p>
                                 </div>
                                 <button type="submit" class="loginhny-btn btn">Entrar</button>
-                            </form>
+
                             <p>Não é Membro? <a href="#">Junte-se Agora!</a></p>
+                            }
                         </div>
                     </div>
                 </div>
                 <div class="w3l-copy-right text-center">
                     <p>
-                        @DateTime.Now.Year Livraria Amplitude. Todos Direiros Reservados 
+                        @DateTime.Now.Year Livraria Amplitude. Todos Direiros Reservados
                     </p>
                 </div>
             </div>
