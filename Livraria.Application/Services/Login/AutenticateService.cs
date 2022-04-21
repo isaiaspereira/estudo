@@ -1,4 +1,5 @@
-﻿using Livraria.Application.Interface.InterfaceSecurity;
+﻿using Livraria.Application.Interface;
+using Livraria.Application.Interface.InterfaceSecurity;
 using Livraria.Domain.Entitis;
 using Livraria.Domain.Interfece.Servico;
 using System;
@@ -11,23 +12,27 @@ namespace Livraria.Application.Services.Login
 {
     public class AutenticateService : IAutenticateService
     {
+        IClienteAppService _ClienteApp;
         IAcessoClienteService _acessoCliente;
         IAcessoUsuarioService _acessoUsuario;
         ISecurity _security;
-        public AutenticateService(IAcessoClienteService acessoCliente, IAcessoUsuarioService acessoUsuario, ISecurity security)
+        public AutenticateService(IAcessoClienteService acessoCliente, IAcessoUsuarioService acessoUsuario, ISecurity security, IClienteAppService ClienteApp)
         {
             _acessoCliente = acessoCliente;
             _security = security;
             _acessoUsuario = acessoUsuario;
+            _ClienteApp = ClienteApp;
         }
 
-        public void CreatCliente(AcessoCliente acessoCliente)
+        public void CreatCliente(AcessoCliente acessoCliente,string NomeClienteAdd)
         {
+            Cliente cliente = _ClienteApp.GetAll().Where(c=>c.Nome==NomeClienteAdd).FirstOrDefault();
+            acessoCliente.AcessoClienteId = cliente.ClienteId;
             acessoCliente.Senha = _security.EncryptPassword(acessoCliente.Senha);
             _acessoCliente.Add(acessoCliente);
         }
 
-        public void CreatUser(AcessoUsuario acessoUsuario)
+        public void CreatUser(AcessoUsuario acessoUsuario, string NomeUsuarioAdd)
         {
             acessoUsuario.Senha = _security.EncryptPassword(acessoUsuario.Senha);
             _acessoUsuario.Add(acessoUsuario);

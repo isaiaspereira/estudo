@@ -11,6 +11,5 @@ namespace Livraria.Domain.Interfece.Servico
     {
         IEnumerable<AcessoCliente> BuscaPorNome(string nome);
         AcessoCliente ClienteAutenticate(string email);
-        void Add(AcessoCliente acessoCliente, int Id);
     }
 }

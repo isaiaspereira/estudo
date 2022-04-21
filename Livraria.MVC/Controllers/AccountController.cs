@@ -29,26 +29,6 @@ namespace Livraria.MVC.Controllers
             _usuarioApp = acessoUsuarioAppService;
             _clienteApp = clienteApp;
         }
-        public ActionResult CreatLogin()
-        {
-            ViewBag.AcessoClienteId = new SelectList(_clienteApp.GetAll(), "ClienteId", "Nome");
-            return View();
-        }
-        [HttpPost]
-        public ActionResult CreatLogin(AcessoClienteViewModels acessoClienteViewModel)
-        {
-            if (ModelState.IsValid)
-            {
-                var addAcessoCliente = Mapper.Map<AcessoClienteViewModels, AcessoCliente>(acessoClienteViewModel);
-                _autenticate.CreatCliente(addAcessoCliente);
-                return RedirectToAction("index", "home");
-            }
-            var listaCliente = Mapper.Map<IEnumerable<Cliente>, IEnumerable<ClienteViewModels>>(_clienteApp.GetAll());
-            ViewBag.ClienteId = new SelectList(listaCliente, "ClienteId", "Nome", acessoClienteViewModel.AcessoClienteId);
-            return View(acessoClienteViewModel);
-
-        }
-
         [AllowAnonymous]
         [HttpGet]
         public ActionResult Login(string returnUrl)
@@ -69,6 +49,7 @@ namespace Livraria.MVC.Controllers
 
             if (_autenticate.LoginUser(loginView.Email, loginView.Senha, loginView.LembrarMe) != null)
             {
+                var Nome = _clienteApp.GetAll().Where(c => c.AcessoCliente.Email == loginView.Email).FirstOrDefault();
                 FormsAuthentication.SetAuthCookie(loginView.Email, loginView.LembrarMe);
 
                 if (Url.IsLocalUrl(returnUrl))

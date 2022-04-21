@@ -14,7 +14,6 @@ namespace Infra.EntityConfig
     {
         public AcessoUsuarioConfig()
         {
-            HasKey(a => a.AcessoUsuarioId);
             Property(a=>a.AcessoUsuarioId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity).IsRequired();
             Property(a => a.Email).IsRequired().HasMaxLength(150);
             Property(a => a.Senha).HasMaxLength(200).IsRequired();

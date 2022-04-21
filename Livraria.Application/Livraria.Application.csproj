@@ -59,6 +59,7 @@
     <Compile Include="Services\AcessoUsuarioAppService.cs" />
     <Compile Include="Services\AppServiceBase.cs" />
     <Compile Include="Services\AutorAppService.cs" />
+    <Compile Include="Services\ClienteAppService.cs" />
     <Compile Include="Services\EditoraAppService.cs" />
     <Compile Include="Services\GeneroAppService.cs" />
     <Compile Include="Services\LivroAppService.cs" />

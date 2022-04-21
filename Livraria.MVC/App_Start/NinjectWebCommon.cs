@@ -81,6 +81,7 @@ namespace Livraria.MVC.App_Start
             kernel.Bind<IAcessoClienteAppService>().To<AcessoClienteAppService>();
             kernel.Bind<IAcessoUsuarioAppService>().To<AcessoUsuarioAppService>();
             kernel.Bind<IAutenticateService>().To<AutenticateService>();
+            kernel.Bind<IClienteAppService>().To<ClienteAppService>();
             
 
             kernel.Bind(typeof(IServicebase<>)).To(typeof(ServiceBase<>));

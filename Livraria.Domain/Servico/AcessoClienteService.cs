@@ -18,11 +18,7 @@ namespace Livraria.Domain.Servico
 
         }
 
-        public void Add(AcessoCliente acessoCliente, int Id)
-        {
-            _AcessoClienteRepository.Add(acessoCliente, Id);
-        }
-
+       
         public IEnumerable<AcessoCliente> BuscaPorNome(string nome)
         {
             return _AcessoClienteRepository.BuscaPorNome(nome);

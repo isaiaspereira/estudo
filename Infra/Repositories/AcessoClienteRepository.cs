@@ -12,14 +12,6 @@ namespace Infra.Repositories
 {
     public class AcessoClienteRepository : RepositoryBase<AcessoCliente>, IAcessoClienteRepository
     {
-        public void Add(AcessoCliente acessoCliente, int Id)
-        {
-            var clinete = Db.Clientes.Find(Id);
-           // acessoCliente.AcessoClienteId = Id;
-            
-            Db.AcessoClientes.Add(acessoCliente);
-            Db.SaveChanges();
-        }
 
         public AcessoCliente ClienteAutenticate(string email)
         {
@@ -28,7 +20,7 @@ namespace Infra.Repositories
 
         IEnumerable<AcessoCliente> IAcessoClienteRepository.BuscaPorNome(string email)
         {
-            return Db.AcessoClientes.Where(c => c.Email.Trim() == email.Trim()).AsQueryable().OrderBy(c=>c.Email).ToList();
+            return Db.AcessoClientes.Where(c => c.Email.Trim() == email.Trim()).AsQueryable().OrderBy(c => c.Email).ToList();
         }
     }
 }

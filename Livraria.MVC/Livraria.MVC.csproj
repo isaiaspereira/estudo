@@ -171,6 +171,7 @@
     <Compile Include="AutoMapper\AutomapperConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AutorController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\EditoraController.cs" />
     <Compile Include="Controllers\GeneroController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -304,6 +305,8 @@
     <Content Include="Views\Editora\_BuscaPorNome.cshtml" />
     <Content Include="Views\Account\CreatLogin.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Cliente\Create.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
