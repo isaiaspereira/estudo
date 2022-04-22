@@ -28,5 +28,10 @@ namespace Livraria.Domain.Servico
         {
             return _AcessoClienteRepository.ClienteAutenticate(email);
         }
+
+        public Cliente ClienteOfAccess(string EmailOfcliente)
+        {
+            return _AcessoClienteRepository.ClienteOfAccess(EmailOfcliente);
+        }
     }
 }

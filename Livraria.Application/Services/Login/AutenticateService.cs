@@ -67,7 +67,7 @@ namespace Livraria.Application.Services.Login
         }
         public bool Logoff(string emailForLogoff)
         {
-            if (_acessoCliente.BuscaPorNome(emailForLogoff).Count() >= 0)
+            if (_acessoCliente.BuscaPorNome(emailForLogoff).FirstOrDefault()!=null)
             {
                 var clienteForLogoff = _acessoCliente.ClienteAutenticate(emailForLogoff);
                 clienteForLogoff.LembrarMe = false;

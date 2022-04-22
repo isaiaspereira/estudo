@@ -49,8 +49,8 @@ namespace Livraria.MVC.Controllers
 
             if (_autenticate.LoginUser(loginView.Email, loginView.Senha, loginView.LembrarMe) != null)
             {
-                var Nome = _clienteApp.GetAll().Where(c => c.AcessoCliente.Email == loginView.Email).FirstOrDefault();
-                FormsAuthentication.SetAuthCookie(loginView.Email, loginView.LembrarMe);
+                var NomeOfCliente = _acessoClienteService.ClienteOfAccess(loginView.Email);
+                FormsAuthentication.SetAuthCookie(NomeOfCliente.Nome, loginView.LembrarMe);
 
                 if (Url.IsLocalUrl(returnUrl))
                     return Redirect(returnUrl);
