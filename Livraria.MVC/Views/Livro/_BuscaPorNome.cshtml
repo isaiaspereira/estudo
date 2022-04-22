@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Livraria.MVC.ViewModels.LivroViewModels>
+    <div id="divBuscaPorNome">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Codigo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Titulo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Preco)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Descricao)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Disponivel)
+                    </th>
+                    <th>
+                        @Html.Label("Editora")
+                    </th>
+                    <th>
+                        @Html.Label("Genero")
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Codigo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Titulo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Preco)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descricao)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Disponivel)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Editora.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Genero.Tipo)
+                        </td>
+                        <td>
+                            @Html.HiddenFor(modelItem => item.Autores)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.LivroId }) |
+                            @Html.ActionLink("Detalhes", "Details", new { id = item.LivroId }) |
+                            @Html.ActionLink("Deletar", "Delete", new { id = item.LivroId })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>

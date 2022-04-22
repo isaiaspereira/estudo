@@ -1,17 +1,23 @@
 ﻿@model IEnumerable<Livraria.MVC.ViewModels.LivroViewModels>
 
 @{
-    ViewBag.Title = "Lisvros Cadastrados";
+    ViewBag.Title = "Livros Cadastrados";
 }
 
-<h2>Index</h2>
+<h2>Index @DateTime.Now</h2>
 
-@using (Html.BeginForm("Index","Livro",FormMethod.Get))
+@using (Ajax.BeginForm("Index","Livro",new AjaxOptions { HttpMethod="Get",InsertionMode=InsertionMode.Replace,UpdateTargetId="divBuscaPorNome"}))
 {
      @Html.TextBox("Pesquisa")
     <input type="submit" value="Pesquisar" class="glyphicon-credit-card" />
+
 }
+@Html.Partial("_BuscaPorNome",Model)
 <p>
     @Html.ActionLink("Novo Livro", "Create")
 </p>
-@Html.Partial("_BucaPorNome", Model)
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    }
+

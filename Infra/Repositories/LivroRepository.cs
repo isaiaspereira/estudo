@@ -14,7 +14,7 @@ namespace Infra.Repositories
     {
         public IEnumerable<Livro> BuscaPorNome(string nome)
         {
-            return Db.Livros.Where(n => n.Nome == nome).AsQueryable().OrderBy(n => n.Nome).ToList();
+            return Db.Livros.Where(n => n.Nome.Contains(nome)).AsQueryable().OrderBy(n => n.Nome).ToList();
         }
 
         public void Relacionar(Livro livro, int DestinoId)

@@ -257,6 +257,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -300,7 +302,7 @@
     <Content Include="Views\Genero\Edit.cshtml" />
     <Content Include="Views\Genero\Delete.cshtml" />
     <Content Include="Views\Genero\_BuscaPorNome.cshtml" />
-    <Content Include="Views\Livro\_BucaPorNome.cshtml" />
+    <Content Include="Views\Livro\_BuscaPorNome.cshtml" />
     <Content Include="Views\Autor\_BuscaPorNome.cshtml" />
     <Content Include="Views\Editora\_BuscaPorNome.cshtml" />
     <Content Include="Views\Account\CreatLogin.cshtml" />

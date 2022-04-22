@@ -76,7 +76,46 @@ namespace Infra.Migrations
                     Disponivel = true,
                     GeneroId = 23,
                     EditoraId = 4
-                }
+                },
+                 new Livro
+                 {
+                     LivroId = 2,
+                     Titulo = "JavaScript",
+                     Codigo = "7789512353",
+                     Nome = "JavaScript",
+                     Preco = 30,
+                     Descricao = "O recurso necessário para se ter um código amplo em java Otimizado",
+                     Sobre = "Aprenda a Programar em java sem mimi.",
+                     Disponivel = true,
+                     GeneroId = 23,
+                     EditoraId = 2
+                 },
+                 new Livro
+                 {
+                     LivroId = 3,
+                     Titulo = "UML",
+                     Codigo = "0783568452",
+                     Nome = "Modelagem No Padrao Uml",
+                     Preco = 300,
+                     Descricao = "O recurso necessário para fazer uma modelagem mais sofisticada",
+                     Sobre = "Aprenda a  Levantar Requisitos.",
+                     Disponivel = true,
+                     GeneroId = 23,
+                     EditoraId = 3
+                 },
+                 new Livro
+                 {
+                     LivroId = 4,
+                     Titulo = "C#",
+                     Codigo = "7894521568",
+                     Nome = "c# Para Leigos",
+                     Preco = 1000,
+                     Descricao = "O recurso necessário para Aprender a Programar em c#",
+                     Sobre = "Aprenda a Programar em C# Rapido e Pratico.",
+                     Disponivel = true,
+                     GeneroId = 23,
+                     EditoraId = 1
+                 }
                 );
             #endregion
         }

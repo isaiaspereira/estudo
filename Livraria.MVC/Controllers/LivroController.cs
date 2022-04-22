@@ -33,14 +33,14 @@ namespace Livraria.MVC.Controllers
 
         public ActionResult Index(string Pesquisa = "")
         {
-            if (!string.IsNullOrEmpty(Pesquisa))
+            if (Request.IsAjaxRequest())
             {
                 var PesquisarPorNome = _LivroApp.BuscaPorNome(Pesquisa);
                 var livroView = Mapper.Map<IEnumerable<Livro>, IEnumerable<LivroViewModels>>(PesquisarPorNome);
-                return View(livroView);
+                return PartialView("_BuscaPorNome",livroView);
             }
-            var livroViewModels = Mapper.Map<IEnumerable<Livro>, IEnumerable<LivroViewModels>>(_LivroApp.GetAll());
 
+            var livroViewModels = Mapper.Map<IEnumerable<Livro>, IEnumerable<LivroViewModels>>(_LivroApp.GetAll());
 
             return View(livroViewModels);
         }
