@@ -2,17 +2,17 @@
 
 namespace Livraria.MVC.Areas.Financeira
 {
-    public class FinanceiraAreaRegistration : AreaRegistration 
+    public class FinanceiraAreaRegistration : AreaRegistration
     {
-        public override string AreaName 
+        public override string AreaName
         {
-            get 
+            get
             {
                 return "Financeira";
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
+        public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
                 "Financeira_default",

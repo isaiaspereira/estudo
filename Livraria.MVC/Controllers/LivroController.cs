@@ -1,12 +1,9 @@
-﻿using Livraria.Domain.Interfece;
-using System.Web.Mvc;
-
-using Livraria.MVC.ViewModels;
-using Livraria.Domain.Entitis;
-using System.Collections.Generic;
-using System;
+﻿using AutoMapper;
 using Livraria.Application.Interface;
-using AutoMapper;
+using Livraria.Domain.Entitis;
+using Livraria.MVC.ViewModels;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace Livraria.MVC.Controllers
 {
@@ -37,7 +34,7 @@ namespace Livraria.MVC.Controllers
             {
                 var PesquisarPorNome = _LivroApp.BuscaPorNome(Pesquisa);
                 var livroView = Mapper.Map<IEnumerable<Livro>, IEnumerable<LivroViewModels>>(PesquisarPorNome);
-                return PartialView("_BuscaPorNome",livroView);
+                return PartialView("_BuscaPorNome", livroView);
             }
 
             var livroViewModels = Mapper.Map<IEnumerable<Livro>, IEnumerable<LivroViewModels>>(_LivroApp.GetAll());

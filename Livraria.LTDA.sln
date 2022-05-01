@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.3
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Aprentation", "0-Aprentation", "{0FF84898-6BC0-4D99-B348-C2F682FA4F97}"
 EndProject
@@ -24,6 +24,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Servico", "1-Servico", "{CDDA9329-D16F-4755-8704-DEAC3A0AF68E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livraria.Servico", "Livraria.Servico\Livraria.Servico.csproj", "{48F6F457-669C-4EDA-9E5D-A34B9530D2AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2-CrossCutting", "4.2-CrossCutting", "{36477360-2D41-473D-AF49-CBEE950541B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossCutting", "CrossCutting\CrossCutting.csproj", "{4134E557-9837-4728-A303-5F38672C9FDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,10 @@ Global
 		{48F6F457-669C-4EDA-9E5D-A34B9530D2AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48F6F457-669C-4EDA-9E5D-A34B9530D2AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48F6F457-669C-4EDA-9E5D-A34B9530D2AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4134E557-9837-4728-A303-5F38672C9FDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4134E557-9837-4728-A303-5F38672C9FDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4134E557-9837-4728-A303-5F38672C9FDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4134E557-9837-4728-A303-5F38672C9FDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,8 @@ Global
 		{1C50FAC0-BC84-4E6A-9F37-931854A4605F} = {C768D6CF-BD52-4AB9-B533-F1D672737F78}
 		{FFD38E29-9170-48F0-809C-497E252112A0} = {0FF84898-6BC0-4D99-B348-C2F682FA4F97}
 		{48F6F457-669C-4EDA-9E5D-A34B9530D2AF} = {CDDA9329-D16F-4755-8704-DEAC3A0AF68E}
+		{36477360-2D41-473D-AF49-CBEE950541B4} = {30A072B6-D841-44C6-AA47-047BCB83323A}
+		{4134E557-9837-4728-A303-5F38672C9FDB} = {36477360-2D41-473D-AF49-CBEE950541B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FBB7DDEF-30B7-41C2-BD32-77F77AAF6063}

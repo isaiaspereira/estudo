@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace Livraria.MVC.ViewModels
 {
     public class LivroViewModels
     {
-        
+
         [Key]
         public int LivroId { get; set; }
 
@@ -58,7 +55,7 @@ namespace Livraria.MVC.ViewModels
 
         public int EditoraId { get; set; }
         public virtual EditoraViewModels Editora { get; set; }
-     
+
         //#region SemProblemas
         //public int LivroId { get; set; }
         //public int Codigo { get; set; }

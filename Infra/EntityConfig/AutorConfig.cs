@@ -1,11 +1,6 @@
 ﻿using Livraria.Domain.Entitis;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infra.EntityConfig
 {
@@ -18,8 +13,8 @@ namespace Infra.EntityConfig
             Property(p => p.Nome).HasColumnName("nomeautor").HasMaxLength(150).IsRequired();
             Property(p => p.SobreNome).HasMaxLength(180).IsRequired();
             Property(p => p.Email).HasMaxLength(100).IsRequired();
-            HasMany(m => m.Editoras).WithMany(c=>c.Autores).Map(x => { x.MapLeftKey("AutorId"); x.MapRightKey("EditoraId"); });
-            HasMany(m => m.Livros).WithMany(c => c.Autores).Map(x => { x.MapLeftKey("AutorId"); x.MapRightKey("LivroId");});
+            HasMany(m => m.Editoras).WithMany(c => c.Autores).Map(x => { x.MapLeftKey("AutorId"); x.MapRightKey("EditoraId"); });
+            HasMany(m => m.Livros).WithMany(c => c.Autores).Map(x => { x.MapLeftKey("AutorId"); x.MapRightKey("LivroId"); });
         }
     }
 }

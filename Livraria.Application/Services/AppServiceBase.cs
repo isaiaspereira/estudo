@@ -3,8 +3,6 @@ using Livraria.Domain.Interfece.Servico;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Livraria.Application
 {
@@ -42,7 +40,7 @@ namespace Livraria.Application
 
         public void Update(TEntity obj)
         {
-           _Servicebase.Update(obj);
+            _Servicebase.Update(obj);
         }
     }
 }

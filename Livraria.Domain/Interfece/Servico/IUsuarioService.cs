@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace Livraria.Domain.Interfece.Servico
 {
-    public    interface IUsuarioService:IServicebase<Usuario>
+    public interface IUsuarioService : IServicebase<Usuario>
     {
-       IEnumerable<Usuario> BuscaPorNome(string nome);
+        IEnumerable<Usuario> BuscaPorNome(string nome);
     }
 }

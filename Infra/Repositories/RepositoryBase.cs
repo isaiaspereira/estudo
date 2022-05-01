@@ -1,4 +1,4 @@
-﻿ using Infra.Context;
+﻿using Infra.Context;
 using Livraria.Domain.Interfece;
 using System;
 using System.Collections.Generic;
@@ -19,6 +19,7 @@ namespace Infra.Repositories
 
         public void Dispose()
         {
+            Db.Dispose();
             Dispose();
         }
 

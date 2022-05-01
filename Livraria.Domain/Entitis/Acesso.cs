@@ -6,6 +6,6 @@ namespace Livraria.Domain.Entitis
         public string Email { get; set; }
         public bool LembrarMe { get; set; }
         public string Senha { get; set; }
-    
+
     }
 }

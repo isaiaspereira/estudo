@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-using Livraria.MVC.ViewModels;
-using Livraria.Domain.Entitis;
+﻿
 using AutoMapper;
+using Livraria.Domain.Entitis;
+using Livraria.MVC.ViewModels;
 
 namespace Livraria.MVC.AutoMapper
 {

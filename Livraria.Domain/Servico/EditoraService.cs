@@ -1,18 +1,14 @@
 ﻿using Livraria.Domain.Entitis;
 using Livraria.Domain.Interfece;
 using Livraria.Domain.Interfece.Servico;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Livraria.Domain.Servico
 {
-   public class EditoraService:ServiceBase<Editora>,IEditoraService
+    public class EditoraService : ServiceBase<Editora>, IEditoraService
     {
         private readonly IEditoraRepository _EditoraRepository;
-        public EditoraService(IEditoraRepository editoraRepository):base(editoraRepository)
+        public EditoraService(IEditoraRepository editoraRepository) : base(editoraRepository)
         {
             _EditoraRepository = editoraRepository;
         }
@@ -24,7 +20,7 @@ namespace Livraria.Domain.Servico
 
         public void Relacionar(Editora editora, int DestinoId)
         {
-            _EditoraRepository.Relacionar(editora,DestinoId);
+            _EditoraRepository.Relacionar(editora, DestinoId);
         }
     }
 }

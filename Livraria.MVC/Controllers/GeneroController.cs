@@ -3,10 +3,7 @@ using AutoMapper;
 using Livraria.Application.Interface;
 using Livraria.Domain.Entitis;
 using Livraria.MVC.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Livraria.MVC.Controllers
@@ -79,7 +76,7 @@ namespace Livraria.MVC.Controllers
         }
 
         // POST: Genero/Delete/5
-        [HttpPost,ActionName("Delete")]
+        [HttpPost, ActionName("Delete")]
         public ActionResult Deletetar(int id)
         {
             var genero = _GeneroApp.GetById(id);

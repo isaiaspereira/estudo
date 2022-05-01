@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Livraria.MVC.ViewModels
 {
-    public class AcessoClienteViewModels:AcessoViewModel
+    public class AcessoClienteViewModels : AcessoViewModel
     {
         [Key]
         public int AcessoClienteId { get; set; }

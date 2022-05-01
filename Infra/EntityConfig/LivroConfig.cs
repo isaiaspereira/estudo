@@ -21,8 +21,8 @@ namespace Infra.EntityConfig
             //relacionamento de livro
             HasMany(m => m.Autores).WithMany().Map(x => { x.MapLeftKey("LivroId"); x.MapRightKey("AutorId"); });
             //relacionamento de um  
-            HasRequired(c => c.Genero).WithMany(m=>m.Livros).HasForeignKey(c => c.GeneroId);
-            HasRequired(c => c.Editora).WithMany(m=>m.Livros).HasForeignKey(c => c.EditoraId);
+            HasRequired(c => c.Genero).WithMany(m => m.Livros).HasForeignKey(c => c.GeneroId);
+            HasRequired(c => c.Editora).WithMany(m => m.Livros).HasForeignKey(c => c.EditoraId);
 
         }
     }

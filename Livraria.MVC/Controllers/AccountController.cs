@@ -1,14 +1,7 @@
-﻿using AutoMapper;
-using Infra.Context;
-using Livraria.Application.Interface;
+﻿using Livraria.Application.Interface;
 using Livraria.Application.Interface.InterfaceSecurity;
-using Livraria.Domain.Entitis;
 using Livraria.Domain.Interfece.Servico;
 using Livraria.MVC.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -18,15 +11,15 @@ namespace Livraria.MVC.Controllers
     {
         private readonly IAutenticateService _autenticate;
         private readonly IAcessoClienteService _acessoClienteService;
-        private readonly IAcessoUsuarioAppService _usuarioApp;
+        private readonly IAcessoUsuarioService _usuarioApp;
         private readonly IClienteService _clienteApp;
 
-        public AccountController(IAcessoUsuarioAppService acessoUsuarioAppService, IAcessoClienteService acessoClienteService,
+        public AccountController(IAcessoUsuarioService acessoUsuarioService, IAcessoClienteService acessoClienteService,
             IAutenticateService autenticate, IClienteService clienteApp)
         {
             _acessoClienteService = acessoClienteService;
             _autenticate = autenticate;
-            _usuarioApp = acessoUsuarioAppService;
+            _usuarioApp = acessoUsuarioService;
             _clienteApp = clienteApp;
         }
         [AllowAnonymous]

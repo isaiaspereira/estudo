@@ -2,11 +2,7 @@
 using Livraria.Application.Interface.InterfaceSecurity;
 using Livraria.Domain.Entitis;
 using Livraria.Domain.Interfece.Servico;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Livraria.Application.Services.Login
 {
@@ -24,9 +20,9 @@ namespace Livraria.Application.Services.Login
             _ClienteApp = ClienteApp;
         }
 
-        public void CreatCliente(AcessoCliente acessoCliente,string NomeClienteAdd)
+        public void CreatCliente(AcessoCliente acessoCliente, string NomeClienteAdd)
         {
-            Cliente cliente = _ClienteApp.GetAll().Where(c=>c.Nome==NomeClienteAdd).FirstOrDefault();
+            Cliente cliente = _ClienteApp.GetAll().Where(c => c.Nome == NomeClienteAdd).FirstOrDefault();
             acessoCliente.AcessoClienteId = cliente.ClienteId;
             acessoCliente.Senha = _security.EncryptPassword(acessoCliente.Senha);
             _acessoCliente.Add(acessoCliente);
@@ -67,7 +63,7 @@ namespace Livraria.Application.Services.Login
         }
         public bool Logoff(string emailForLogoff)
         {
-            if (_acessoCliente.BuscaPorNome(emailForLogoff).FirstOrDefault()!=null)
+            if (_acessoCliente.BuscaPorNome(emailForLogoff).FirstOrDefault() != null)
             {
                 var clienteForLogoff = _acessoCliente.ClienteAutenticate(emailForLogoff);
                 clienteForLogoff.LembrarMe = false;

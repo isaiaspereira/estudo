@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using Livraria.Application.Interface;
+﻿using Livraria.Application.Interface;
 using Livraria.Domain.Entitis;
 using Livraria.Domain.Interfece.Servico;
+using System.Collections.Generic;
 
 namespace Livraria.Application
 {

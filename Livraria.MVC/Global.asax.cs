@@ -1,8 +1,13 @@
-﻿using AutoMapper;
+﻿using CrossCutting.IoC;
 using Livraria.MVC.AutoMapper;
+using SimpleInjector;
+using SimpleInjector.Integration.Web.Mvc;
+using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+
+
 
 namespace Livraria.MVC
 {
@@ -15,8 +20,12 @@ namespace Livraria.MVC
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutomapperConfig.RegisterMappings();
-            //DependencyResolver.SetResolver(new MyApp.Infraestrutura.IoC.RegisterServices());
 
+            var container = new Container();
+            container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
+            container.Verify();
+            container.Dispose();
+            DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(DIContainer.RegisterDependencies(container)));
 
         }
     }

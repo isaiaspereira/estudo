@@ -1,10 +1,7 @@
 ﻿using Livraria.Domain.Entitis;
 using Livraria.Domain.Interfece;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infra.Repositories
 {
@@ -20,10 +17,10 @@ namespace Infra.Repositories
 
         public void Relacionar(Editora editora, int DestinoId)
         {
-                var AutorRelacionadoEditora = Db.Autores.Find(DestinoId);
-                editora.Autores.Add(AutorRelacionadoEditora);
-                Db.Editoras.Add(editora);
-                Db.SaveChanges();
+            var AutorRelacionadoEditora = Db.Autores.Find(DestinoId);
+            editora.Autores.Add(AutorRelacionadoEditora);
+            Db.Editoras.Add(editora);
+            Db.SaveChanges();
         }
     }
 }

@@ -3,7 +3,6 @@ using AutoMapper;
 using Livraria.Application.Interface;
 using Livraria.Domain.Entitis;
 using Livraria.MVC.ViewModels;
-using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -22,15 +21,15 @@ namespace Livraria.MVC.Controllers
         public ActionResult Index(string Pesquisa = "")
         {
 
-                if (!string.IsNullOrEmpty(Pesquisa))
-                {
-                    var PesquisaPorNome = _EditoraApp.BuscaPorNome(Pesquisa);
-                    var editoraViewModels = Mapper.Map<IEnumerable<Editora>, IEnumerable<EditoraViewModels>>(PesquisaPorNome);
-                    return View(editoraViewModels);
-                }
+            if (!string.IsNullOrEmpty(Pesquisa))
+            {
+                var PesquisaPorNome = _EditoraApp.BuscaPorNome(Pesquisa);
+                var editoraViewModels = Mapper.Map<IEnumerable<Editora>, IEnumerable<EditoraViewModels>>(PesquisaPorNome);
+                return View(editoraViewModels);
+            }
             try
             {
-                
+
                 var edidoraVM = Mapper.Map<IEnumerable<Editora>, IEnumerable<EditoraViewModels>>(_EditoraApp.GetAll());
 
                 return View(edidoraVM);

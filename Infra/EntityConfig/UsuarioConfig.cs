@@ -1,11 +1,6 @@
 ﻿using Livraria.Domain.Entitis;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infra.EntityConfig
 {
@@ -24,7 +19,7 @@ namespace Infra.EntityConfig
             Property(c => c.Cargo).HasMaxLength(80).IsRequired();
             Property(c => c.CTPS).HasMaxLength(12).IsRequired().HasColumnName("ctps");
             Property(c => c.Salario).IsRequired().HasPrecision(18, 2);
-            
+
         }
     }
 }
