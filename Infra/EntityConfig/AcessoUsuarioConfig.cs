@@ -12,7 +12,12 @@ namespace Infra.EntityConfig
             Property(a => a.Email).IsRequired().HasMaxLength(150);
             Property(a => a.Senha).HasMaxLength(200).IsRequired();
             HasRequired(c => c.Usuario).WithOptional(c => c.AcessoUsuario).WillCascadeOnDelete(false);
-
+            HasMany(c => c.PerfilAcesso).WithMany(c => c.AcessoUsuario).Map(c =>
+                {
+                    c.MapLeftKey("AcessoUsuarioId");
+                    c.MapRightKey("PerfilAcessoId");
+                    c.ToTable("PerfilAcessoUsuario");
+                });
         }
     }
 }

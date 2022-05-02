@@ -27,13 +27,14 @@
                         <li>@Html.ActionLink("Genero", "index", "Genero")</li>
                         <li>@Html.ActionLink("Livro", "index", "Livro")</li>
                         <li>@Html.ActionLink("Autor", "index", "Autor")</li>
-                        
+
                     </ul>
 
                     <ul class="nav  navbar-right navbar-nav  ">
 
-                        <li>@Html.ActionLink(User.Identity.Name, "#", "#")</li>
-                        <li>@Html.ActionLink("Sair", "Logoff", "Account")</li>
+                        <li>@Html.ActionLink("Olá " + User.Identity.Name, "#", "#")</li>
+                        <li><a href="Account/Logoff">Sair <span class="glyphicon glyphicon-log-in"></span></a></li>
+                        @*<li>@Html.ActionLink("Sair", "Logoff", "Account")</li>*@
 
                     </ul>
                 }

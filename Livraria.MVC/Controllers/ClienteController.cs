@@ -43,9 +43,7 @@ namespace Livraria.MVC.Controllers
 
                 var ClienteAdd = Mapper.Map<ClienteViewModels, Cliente>(clienteView);
                 _clienteApp.Add(ClienteAdd);
-
                 var AcessoClienteAdd = new AcessoCliente { Email = clienteView.AcessoClienteView.Email, Senha = clienteView.AcessoClienteView.Senha, LembrarMe = false };
-
                 _autenticate.CreatCliente(AcessoClienteAdd, clienteView.Nome);
                 return RedirectToAction("Index", "Cliente");
             }

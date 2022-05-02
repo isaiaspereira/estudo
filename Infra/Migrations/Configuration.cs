@@ -14,15 +14,34 @@ namespace Infra.Migrations
 
         protected override void Seed(Context.LivrariaContext context)
         {
-            //context.Enderecos.AddOrUpdate(new Endereco { EnderecoId = 1, ClienteId = 2, Bairro = "jequitiba", CEP = "7895654", Cidade = "cuiaba", Estado = "para", Logradouro = "rua", Rua = "14", Referencia = "esquina"});
-            //context.Contatos.AddOrUpdate(new Contato { UsuarioId = 1, Telefone1 = "65132135", OperadoraId = 1});
-            context.Usuarios.AddOrUpdate(new Usuario { Ativo = true, Cargo = "Gestor de Categoria", CPF = "132152305", RG = "1315480", CTPS = "120315", Nome = "eduardo", Salario = 1800, SobreNome = "pires" });
-            context.Clientes.AddOrUpdate(new Cliente { Nome = "Isaias", RG = "25148561", CPF = "20154862" });
+            #region Perfil
+            context.PerfilAcessos.AddOrUpdate(
+                new PerfilAcesso { PerfilAcessoId = 1, NomeAcesso = "Presidente" },
+                new PerfilAcesso { PerfilAcessoId = 2,NomeAcesso="Administrativo"},
+                new PerfilAcesso { PerfilAcessoId = 3,NomeAcesso="Financeiro"},
+                new PerfilAcesso { PerfilAcessoId = 4,NomeAcesso="Operador"}
+            );
+            #endregion
+            #region Endereco
+            context.Enderecos.AddOrUpdate(new Endereco { EnderecoId = 1, ClienteId = 1, Bairro = "jequitiba", CEP = "7895654", Cidade = "cuiaba", Estado = "Pará", Logradouro = "rua", Rua = "14", Referencia = "esquina" });
+            #endregion
+            #region Contato
+            context.Contatos.AddOrUpdate(new Contato { UsuarioId = 1, Telefone1 = "65132135", OperadoraId = 1 });
+            #endregion
+            #region Usuario
+            context.Usuarios.AddOrUpdate(
+                new Usuario { UsuarioId = 0, Ativo = true, Cargo = "Gestor de Categoria", CPF = "132152305", RG = "1315480", CTPS = "120315", Nome = "eduardo", Salario = 1800, SobreNome = "pires" },
+                new Usuario { UsuarioId = 1, Ativo = true, Cargo = "Programado Jr", CPF = "12548133", RG = "2548128", CTPS = "122845", Nome = "Isaias", Salario = 5800, SobreNome = "Ares" });
+            #endregion
+            #region Cliente
+            context.Clientes.AddOrUpdate(new Cliente { ClienteId = 0, Nome = "Isaias", RG = "25148561", CPF = "20154862" });
+            #endregion
+            #region Operadora
             context.Operadoras.AddOrUpdate(new Operadora { Nome = "Claro", ContatoId = 1, DDD = "65" });
+            #endregion
             #region Genero
             context.Generos.AddOrUpdate(
                 new Livraria.Domain.Entitis.Genero { GeneroId = 1, Tipo = "Agropecuario	" },
-                new Livraria.Domain.Entitis.Genero { GeneroId = 23, Tipo = "Tecnologia" },
                 new Livraria.Domain.Entitis.Genero { GeneroId = 24, Tipo = "Religioso" },
                 new Livraria.Domain.Entitis.Genero { GeneroId = 2, Tipo = "Antologias" },
                 new Livraria.Domain.Entitis.Genero { GeneroId = 3, Tipo = "Auto Ajuda" },
@@ -44,7 +63,8 @@ namespace Infra.Migrations
                 new Livraria.Domain.Entitis.Genero { GeneroId = 19, Tipo = "Manuais" },
                 new Livraria.Domain.Entitis.Genero { GeneroId = 20, Tipo = "Memoria" },
                 new Livraria.Domain.Entitis.Genero { GeneroId = 21, Tipo = "Natal" },
-                new Livraria.Domain.Entitis.Genero { GeneroId = 22, Tipo = "Poesia" }
+                new Livraria.Domain.Entitis.Genero { GeneroId = 22, Tipo = "Poesia" },
+                new Livraria.Domain.Entitis.Genero { GeneroId = 23, Tipo = "Tecnologia" }
                 );
             #endregion
             #region Editora

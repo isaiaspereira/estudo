@@ -59,6 +59,7 @@
     <Compile Include="Context\LivrariaContext.cs" />
     <Compile Include="EntityConfig\LivroConfig.cs" />
     <Compile Include="EntityConfig\OperadoraConfig.cs" />
+    <Compile Include="EntityConfig\PerfilAcessoConfig.cs" />
     <Compile Include="EntityConfig\UsuarioConfig.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

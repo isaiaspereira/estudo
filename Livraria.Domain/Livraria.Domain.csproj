@@ -51,6 +51,7 @@
     <Compile Include="Entitis\Genero.cs" />
     <Compile Include="Entitis\Livro.cs" />
     <Compile Include="Entitis\Operadora.cs" />
+    <Compile Include="Entitis\PerfilAcesso.cs" />
     <Compile Include="Entitis\Usuario.cs" />
     <Compile Include="Interfece\Repositorio\IAcessoClienteRepository .cs" />
     <Compile Include="Interfece\Repositorio\IAcessoUsuarioRepository.cs" />

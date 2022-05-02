@@ -10,8 +10,7 @@ namespace Infra.Context
     public class LivrariaContext : DbContext
     {
         //ConfigurationManager.ConnectionStrings["SuaStringDeConexao"].ConnectionString<- Setando Sua ConnectionString
-        public LivrariaContext() :
-            base("LivrariaLTDA")
+        public LivrariaContext() : base("LivrariaLTDA")
         {
 
         }
@@ -23,6 +22,7 @@ namespace Infra.Context
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<AcessoUsuario> AcessoUsuarios { get; set; }
         public DbSet<AcessoCliente> AcessoClientes { get; set; }
+        public DbSet<PerfilAcesso> PerfilAcessos { get; set; }
         public DbSet<Contato> Contatos { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Operadora> Operadoras { get; set; }
@@ -44,6 +44,7 @@ namespace Infra.Context
             modelBuilder.Configurations.Add(new ClienteConfig());
             modelBuilder.Configurations.Add(new AcessoClienteConfig());
             modelBuilder.Configurations.Add(new AcessoUsuarioConfig());
+            modelBuilder.Configurations.Add(new PerfilAcessoConfig());
             modelBuilder.Configurations.Add(new ContatoConfig());
             modelBuilder.Configurations.Add(new EnderecoConfig());
             modelBuilder.Configurations.Add(new OperadoraConfig());
