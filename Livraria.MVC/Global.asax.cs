@@ -20,13 +20,6 @@ namespace Livraria.MVC
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutomapperConfig.RegisterMappings();
-
-            var container = new Container();
-            container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
-            container.Verify();
-            container.Dispose();
-            DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(DIContainer.RegisterDependencies(container)));
-
         }
     }
 }

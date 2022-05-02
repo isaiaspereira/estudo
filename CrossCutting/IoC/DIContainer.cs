@@ -17,48 +17,48 @@ namespace CrossCutting.IoC
         public static Container RegisterDependencies(Container container)
         {
             #region Dependencia Do Repositorio
-            container.Register(typeof(IRepositorybase<>), typeof(RepositoryBase<>), Lifestyle.Singleton);
-            container.Register<IAcessoClienteRepository, AcessoClienteRepository>();
-            container.Register<IAcessoUsuarioRepository, AcessoUsuarioRepository>();
-            container.Register<IAutorRepository, AutorRepository>();
-            container.Register<IClienteRepository, ClienteRepository>();
-            container.Register<IContatoRepository, ContatoRepository>();
-            container.Register<IEditoraRepository, EditoraRepository>();
-            container.Register<IEnderecoRepository, EnderecoRepository>();
-            container.Register<IGeneroRepository, GeneroRepository>();
-            container.Register<ILivroRepository, LivroRepository>();
-            container.Register<IOperadoraRepository, OperadoraRepository>();
-            container.Register<IUsuarioRepository, UsuarioRepository>();
+            container.Register(typeof(IRepositorybase<>), typeof(RepositoryBase<>), Lifestyle.Transient);
+            container.Register<IAcessoClienteRepository, AcessoClienteRepository>(Lifestyle.Singleton);
+            container.Register<IAcessoUsuarioRepository, AcessoUsuarioRepository>(Lifestyle.Singleton);
+            container.Register<IAutorRepository, AutorRepository>(Lifestyle.Singleton);
+            container.Register<IClienteRepository, ClienteRepository>(Lifestyle.Singleton);
+            container.Register<IContatoRepository, ContatoRepository>(Lifestyle.Singleton);
+            container.Register<IEditoraRepository, EditoraRepository>(Lifestyle.Singleton);
+            container.Register<IEnderecoRepository, EnderecoRepository>(Lifestyle.Singleton);
+            container.Register<IGeneroRepository, GeneroRepository>(Lifestyle.Singleton);
+            container.Register<ILivroRepository, LivroRepository>(Lifestyle.Singleton);
+            container.Register<IOperadoraRepository, OperadoraRepository>(Lifestyle.Singleton);
+            container.Register<IUsuarioRepository, UsuarioRepository>(Lifestyle.Singleton);
+
             #endregion
             #region Dependencia Do Serviço
-            container.Register(typeof(IServicebase<>), typeof(ServiceBase<>), Lifestyle.Singleton);
-            container.Register<IAcessoClienteService, AcessoClienteService>();
-            container.Register<IAcessoUsuarioService, AcessoUsuarioService>();
-            container.Register<IAutorService, AutorService>();
-            container.Register<IClienteService, ClienteService>();
-            container.Register<IContatoService, ContatoService>();
-            container.Register<IEditoraService, EditoraService>();
-            container.Register<IEnderecoService, EnderecoService>();
-            container.Register<IGeneroService, GeneroService>();
-            container.Register<ILivroService, LivroService>();
-            container.Register<IOperadoraService, OperadoraService>();
-            container.Register<IUsuarioService, UsuarioService>();
+            container.Register(typeof(IServicebase<>), typeof(ServiceBase<>), Lifestyle.Transient);
+            container.Register<IAcessoClienteService, AcessoClienteService>(Lifestyle.Singleton);
+            container.Register<IAcessoUsuarioService, AcessoUsuarioService>(Lifestyle.Singleton);
+            container.Register<IAutorService, AutorService>(Lifestyle.Singleton);
+            container.Register<IClienteService, ClienteService>(Lifestyle.Singleton);
+            container.Register<IContatoService, ContatoService>(Lifestyle.Singleton);
+            container.Register<IEditoraService, EditoraService>(Lifestyle.Singleton);
+            container.Register<IEnderecoService, EnderecoService>(Lifestyle.Singleton);
+            container.Register<IGeneroService, GeneroService>(Lifestyle.Singleton);
+            container.Register<ILivroService, LivroService>(Lifestyle.Singleton);
+            container.Register<IOperadoraService, OperadoraService>(Lifestyle.Singleton);
+            container.Register<IUsuarioService, UsuarioService>(Lifestyle.Singleton);
+
             #endregion
             #region Dependencia Da Application
-            container.Register(typeof(IAppSeriveBase<>), typeof(AppServiceBase<>), Lifestyle.Singleton);
-            container.Register<IAcessoClienteAppService, AcessoClienteAppService>();
-            container.Register<IAcessoUsuarioAppService, AcessoUsuarioAppService>();
-            container.Register<IAutorAppService, AutorAppService>();
-            container.Register<IClienteAppService, ClienteAppService>();
-            container.Register<ILivroAppService, LivroAppService>();
-            container.Register<IGeneroAppService, GeneroAppService>();
-            container.Register<IEditoraAppService, EditoraAppService>();
+            container.Register(typeof(IAppSeriveBase<>), typeof(AppServiceBase<>), Lifestyle.Transient);
+            container.Register<IAcessoClienteAppService, AcessoClienteAppService>(Lifestyle.Singleton);
+            container.Register<IAcessoUsuarioAppService, AcessoUsuarioAppService>(Lifestyle.Singleton);
+            container.Register<IAutorAppService, AutorAppService>(Lifestyle.Singleton);
+            container.Register<IClienteAppService, ClienteAppService>(Lifestyle.Singleton);
+            container.Register<ILivroAppService, LivroAppService>(Lifestyle.Singleton);
+            container.Register<IGeneroAppService, GeneroAppService>(Lifestyle.Singleton);
+            container.Register<IEditoraAppService, EditoraAppService>(Lifestyle.Singleton);
             container.Register<IAutenticateService, AutenticateService>();
             container.Register<ISecurity, Security>();
-            container.Dispose();
-
+            container.Verify();
             #endregion
-
             return container;
         }
     }

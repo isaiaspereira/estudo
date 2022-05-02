@@ -2,6 +2,7 @@
 using Livraria.Application.Interface.InterfaceSecurity;
 using Livraria.Domain.Interfece.Servico;
 using Livraria.MVC.ViewModels;
+using System.ComponentModel;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -14,8 +15,11 @@ namespace Livraria.MVC.Controllers
         private readonly IAcessoUsuarioService _usuarioApp;
         private readonly IClienteService _clienteApp;
 
-        public AccountController(IAcessoUsuarioService acessoUsuarioService, IAcessoClienteService acessoClienteService,
-            IAutenticateService autenticate, IClienteService clienteApp)
+        public AccountController(
+            IAcessoUsuarioService acessoUsuarioService,
+            IAcessoClienteService acessoClienteService,
+            IAutenticateService autenticate,
+            IClienteService clienteApp)
         {
             _acessoClienteService = acessoClienteService;
             _autenticate = autenticate;
