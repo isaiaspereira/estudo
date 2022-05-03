@@ -12,9 +12,11 @@ namespace Infra.Repositories
             return Db.AcessoUsuarios.Where(c => c.Email.Trim() == email.Trim()).FirstOrDefault();
         }
 
-        IEnumerable<AcessoUsuario> IAcessoUsuarioRepository.BuscaPorNome(string email)
+       public IEnumerable<AcessoUsuario> BuscaPorNome(string email)
         {
             return Db.AcessoUsuarios.Where(c => c.Email.Trim() == email.Trim()).AsQueryable().OrderBy(c => c.Email).ToList();
         }
+
+      
     }
 }

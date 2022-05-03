@@ -8,5 +8,6 @@ namespace Livraria.Domain.Interfece.Servico
         IEnumerable<AcessoCliente> BuscaPorNome(string nome);
         AcessoCliente ClienteAutenticate(string email);
         Cliente ClienteOfAccess(string EmailOfcliente);
+        string[] GetNamePerfilAcesso(string EmailOfPrfil);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Livraria.Domain.Entitis;
 using Livraria.Domain.Interfece.Repositorio;
 using Livraria.Domain.Interfece.Servico;
+using System;
 using System.Collections.Generic;
 
 namespace Livraria.Domain.Servico
@@ -28,6 +29,11 @@ namespace Livraria.Domain.Servico
         public Cliente ClienteOfAccess(string EmailOfcliente)
         {
             return _AcessoClienteRepository.ClienteOfAccess(EmailOfcliente);
+        }
+
+        public string[] GetNamePerfilAcesso(string EmailOfPrfil)
+        {
+            return _AcessoClienteRepository.GetNamePerfilAcesso( EmailOfPrfil);
         }
     }
 }

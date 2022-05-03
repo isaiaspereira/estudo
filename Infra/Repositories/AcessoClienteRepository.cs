@@ -13,7 +13,7 @@ namespace Infra.Repositories
             return Db.AcessoClientes.Where(c => c.Email.Trim() == email.Trim()).FirstOrDefault();
         }
 
-        IEnumerable<AcessoCliente> IAcessoClienteRepository.BuscaPorNome(string email)
+        public IEnumerable<AcessoCliente> BuscaPorNome(string email)
         {
             return Db.AcessoClientes.Where(c => c.Email.Trim() == email.Trim()).AsQueryable().OrderBy(c => c.Email).ToList();
         }
@@ -22,6 +22,12 @@ namespace Infra.Repositories
         {
             int IdAccessClient = Db.AcessoClientes.Where(c => c.Email.Trim().ToLower() == EmailOfcliente.ToLower().Trim()).Select(c => c.AcessoClienteId).FirstOrDefault();
             return Db.Clientes.Where(c => c.ClienteId == IdAccessClient).FirstOrDefault();
+        }
+
+        public string[] GetNamePerfilAcesso(string EmailOfPrfil)
+        {
+            var NamesPerfilAcesso = Db.AcessoClientes.Where(c=>c.Email==EmailOfPrfil).FirstOrDefault();
+            return NamesPerfilAcesso.PerfilAcesso.Select(c => c.NomeAcesso).ToArray();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace CrossCutting.IoC
         public static Container RegisterDependencies(Container container)
         {
             #region Dependencia Do Repositorio
-            container.Register(typeof(IRepositorybase<>), typeof(RepositoryBase<>), Lifestyle.Transient);
+            container.Register(typeof(IRepositorybase<>), typeof(RepositoryBase<>), Lifestyle.Scoped);
             container.Register<IAcessoClienteRepository, AcessoClienteRepository>(Lifestyle.Singleton);
             container.Register<IAcessoUsuarioRepository, AcessoUsuarioRepository>(Lifestyle.Singleton);
             container.Register<IAutorRepository, AutorRepository>(Lifestyle.Singleton);
@@ -32,7 +32,7 @@ namespace CrossCutting.IoC
 
             #endregion
             #region Dependencia Do Serviço
-            container.Register(typeof(IServicebase<>), typeof(ServiceBase<>), Lifestyle.Transient);
+            container.Register(typeof(IServicebase<>), typeof(ServiceBase<>), Lifestyle.Scoped);
             container.Register<IAcessoClienteService, AcessoClienteService>(Lifestyle.Singleton);
             container.Register<IAcessoUsuarioService, AcessoUsuarioService>(Lifestyle.Singleton);
             container.Register<IAutorService, AutorService>(Lifestyle.Singleton);
@@ -47,7 +47,7 @@ namespace CrossCutting.IoC
 
             #endregion
             #region Dependencia Da Application
-            container.Register(typeof(IAppSeriveBase<>), typeof(AppServiceBase<>), Lifestyle.Transient);
+            container.Register(typeof(IAppSeriveBase<>), typeof(AppServiceBase<>), Lifestyle.Scoped);
             container.Register<IAcessoClienteAppService, AcessoClienteAppService>(Lifestyle.Singleton);
             container.Register<IAcessoUsuarioAppService, AcessoUsuarioAppService>(Lifestyle.Singleton);
             container.Register<IAutorAppService, AutorAppService>(Lifestyle.Singleton);

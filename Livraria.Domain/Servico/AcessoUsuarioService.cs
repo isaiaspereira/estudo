@@ -17,7 +17,7 @@ namespace Livraria.Domain.Servico
 
         public IEnumerable<AcessoUsuario> BuscaPorNome(string nome)
         {
-            throw new NotImplementedException();
+            return _AcessoRepository.BuscaPorNome(nome);
         }
 
         public AcessoUsuario UsuarioAutenticate(string email)

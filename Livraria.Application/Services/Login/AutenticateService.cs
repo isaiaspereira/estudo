@@ -8,21 +8,23 @@ namespace Livraria.Application.Services.Login
 {
     public class AutenticateService : IAutenticateService
     {
-        IClienteAppService _ClienteApp;
+        IClienteAppService _clienteApp;
+        IUsuarioService _usuarioApp;
         IAcessoClienteService _acessoCliente;
         IAcessoUsuarioService _acessoUsuario;
         ISecurity _security;
-        public AutenticateService(IAcessoClienteService acessoCliente, IAcessoUsuarioService acessoUsuario, ISecurity security, IClienteAppService ClienteApp)
+        public AutenticateService(IAcessoClienteService acessoCliente, IUsuarioService usuarioService, IAcessoUsuarioService acessoUsuario, ISecurity security, IClienteAppService ClienteApp)
         {
             _acessoCliente = acessoCliente;
             _security = security;
             _acessoUsuario = acessoUsuario;
-            _ClienteApp = ClienteApp;
+            _clienteApp = ClienteApp;
+            _usuarioApp = usuarioService;
         }
 
         public void CreatCliente(AcessoCliente acessoCliente, string NomeClienteAdd)
         {
-            Cliente cliente = _ClienteApp.GetAll().Where(c => c.Nome == NomeClienteAdd).FirstOrDefault();
+            Cliente cliente = _clienteApp.GetAll().Where(c => c.Nome == NomeClienteAdd).FirstOrDefault();
             acessoCliente.AcessoClienteId = cliente.ClienteId;
             acessoCliente.Senha = _security.EncryptPassword(acessoCliente.Senha);
             _acessoCliente.Add(acessoCliente);
@@ -63,22 +65,31 @@ namespace Livraria.Application.Services.Login
         }
         public bool Logoff(string emailForLogoff)
         {
-            if (_acessoCliente.BuscaPorNome(emailForLogoff).FirstOrDefault() != null)
+            try
             {
-                var clienteForLogoff = _acessoCliente.ClienteAutenticate(emailForLogoff);
-                clienteForLogoff.LembrarMe = false;
-                _acessoCliente.Update(clienteForLogoff);
-                return true;
-            }
 
-            if (_acessoUsuario.BuscaPorNome(emailForLogoff).Count() >= 0)
-            {
-                var usurarioForLogoff = _acessoUsuario.UsuarioAutenticate(emailForLogoff);
-                usurarioForLogoff.LembrarMe = false;
-                _acessoUsuario.Update(usurarioForLogoff);
-                return true;
+                if (_clienteApp.GetAll().Select(c => c.Nome.ToLower() == emailForLogoff.ToLower()).FirstOrDefault())
+                {
+                    AcessoCliente acessoForLogoff = _acessoCliente.GetAll().Where(c => c.Cliente.Nome.ToLower() == emailForLogoff.ToLower()).FirstOrDefault();
+                    acessoForLogoff.LembrarMe = false;
+                    _acessoCliente.Update(acessoForLogoff);
+                    return true;
+                }
+                else
+                {
+                    AcessoUsuario usurarioForLogoff = _acessoUsuario.GetAll().Where(c => c.Usuario.Nome.ToLower() == emailForLogoff.ToLower()).FirstOrDefault();
+                    usurarioForLogoff.LembrarMe = false;
+                    _acessoUsuario.Update(usurarioForLogoff);
+                    return true;
+                }
+
+
             }
-            return false;
+            catch
+            {
+
+                return false;
+            }
         }
     }
 }

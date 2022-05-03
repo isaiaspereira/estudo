@@ -2,7 +2,9 @@
 using Livraria.Application.Interface.InterfaceSecurity;
 using Livraria.Domain.Interfece.Servico;
 using Livraria.MVC.ViewModels;
+using System;
 using System.ComponentModel;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -46,8 +48,13 @@ namespace Livraria.MVC.Controllers
 
             if (_autenticate.LoginUser(loginView.Email, loginView.Senha, loginView.LembrarMe) != null)
             {
-                var NomeOfCliente = _acessoClienteService.ClienteOfAccess(loginView.Email);
-                FormsAuthentication.SetAuthCookie(NomeOfCliente.Nome, loginView.LembrarMe);
+                string nameOfCliente = _acessoClienteService.ClienteOfAccess(loginView.Email).Nome.ToString();
+                var nameOfPerfilAcessos =string.Join(";",_acessoClienteService.GetNamePerfilAcesso(loginView.Email));
+                var ticketAutenticate =
+                     FormsAuthentication.Encrypt(new FormsAuthenticationTicket
+                     (1, nameOfCliente, DateTime.Now, DateTime.Now.AddHours(12), loginView.LembrarMe, nameOfPerfilAcessos));
+                var cookieAutentication = new HttpCookie(FormsAuthentication.FormsCookieName, ticketAutenticate);
+                Response.Cookies.Add(cookieAutentication);
 
                 if (Url.IsLocalUrl(returnUrl))
                     return Redirect(returnUrl);

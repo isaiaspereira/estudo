@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Livraria.MVC.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Presidente,Administrativo")]
     public class LivroController : Controller
     {
         private readonly ILivroAppService _LivroApp;
