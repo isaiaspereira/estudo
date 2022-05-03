@@ -82,8 +82,6 @@ namespace Livraria.Application.Services.Login
                     _acessoUsuario.Update(usurarioForLogoff);
                     return true;
                 }
-
-
             }
             catch
             {

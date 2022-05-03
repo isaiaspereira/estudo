@@ -197,6 +197,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\LayoutAdministrativo\LayoutAdmstyle.css" />
     <Content Include="Content\Login\images\banner.jpg" />
     <Content Include="Content\Login\images\banner1.jpg" />
     <Content Include="Content\Login\LoginStyle.css" />
@@ -266,6 +267,10 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\LayouAdm\bootstrap.min.js" />
+    <Content Include="Scripts\LayouAdm\jquery.min.js" />
+    <Content Include="Scripts\LayouAdm\main.js" />
+    <Content Include="Scripts\LayouAdm\popper.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -312,6 +317,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Cliente\Create.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdministrativo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
